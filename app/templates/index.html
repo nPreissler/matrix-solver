@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,30 @@
     <script src="{{ url_for('static', filename='js/matrix.js') }}" defer></script>
     <title>Matrix Solver</title>
 </head>
+
 <body>
-    <h1>Matrix Solver</h1>
+    <h1>Resolução de Matrizes</h1>
+
     <form id="matrix-form">
-        <label for="rows">Rows:</label>
+        <label for="rows">Linhas:</label>
         <input type="number" id="rows" name="rows" min="1" required>
-        <label for="cols">Cols:</label>
+
+        <label for="cols">Colunas:</label>
         <input type="number" id="cols" name="cols" min="1" required>
-        <button type="button" onclick="generateMatrixFields()">Generate Matrices</button>
+
+        <button type="button" onclick="generateMatrixFields()">Gerar Matrizes</button>
+
         <div id="matrix-fields"></div>
-        <button type="submit">Calculate</button>
+
+        <h3>Operação:</h3>
+        <label><input type="radio" name="operation" value="add" required> Soma</label>
+        <label><input type="radio" name="operation" value="subtract"> Subtração</label>
+        <label><input type="radio" name="operation" value="multiply"> Multiplicação</label>
+
+        <button type="submit">Calcular</button>
     </form>
+
     <div id="result"></div>
 </body>
+
 </html>
