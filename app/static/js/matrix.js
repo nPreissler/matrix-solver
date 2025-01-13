@@ -9,18 +9,30 @@ function returnMatrix() {
     const rows = document.getElementById('rows').value;
     const cols = document.getElementById('columns').value; //get values, rows and cols
 
-    const container = document.getElementById('matrix-inputs') // element who's reserve space for create this matrices
+    const containerA = document.getElementById('matrix-inputs-a') // element who's reserve space for create this matrices
+    const containerB = document.getElementById('matrix-inputs-b')
 
-    container.style.display = 'grid'
-    container.style.gridTemplateColumns = `repeat(${cols}, auto)`;
-    container.style.gridTemplateRows = `repeat(${rows}), auto` // setting style for matrices have the correct size ----> without this, all numbers are stand in one line
+    containerB.style.display = 'grid';
+    containerB.style.gridTemplateColumns = `repeat(${cols}, auto)`;
+    containerB.style.gridTemplateRows = `repeat(${rows}, auto)`;
+
+    containerA.style.display = 'grid';
+    containerA.style.gridTemplateColumns = `repeat(${cols}, auto)`;
+    containerA.style.gridTemplateRows = `repeat(${rows}), auto`; // setting style for matrices have the correct size ----> without this, all numbers are stand in one line
 
 
     for (let i = 0; i < rows * cols; i++) {
         const cell = document.createElement('div');
         cell.style.padding = '1em'
-        cell.innerHTML = `<input type="number" name="" id="matrix-number">`;
-        container.appendChild(cell)
+        cell.innerHTML = `<input type="number" name="" id="matrix-number num-a">`;
+        containerA.appendChild(cell)
+    }
+
+    for (let i = 0; i < rows * cols; i++) {
+        const cell = document.createElement('div');
+        cell.style.padding = '1em'
+        cell.innerHTML = `<input type="number" name="" id="matrix-number num-b">`;
+        containerB.appendChild(cell)
     }
 }
 
