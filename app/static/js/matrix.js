@@ -68,8 +68,28 @@ document.getElementById('calculate').addEventListener('click', async () => {
         operation
     };
 
-    console.log(payload)
-})
+    console.log(payload) // informations of requisition
+
+    try {
+        const response = await fetch('/calculate', { //send it to "routes.py" -> /calculate
+            method: 'POST',
+            headers: { 'Content type' : 'application.json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            const result = await response.json(); //get return of result of operation
+            console.log('Result: ', result) 
+        } 
+        else {
+            console.log('Error in backend response'); //alert if backend apresnet errors/problems for process the operation
+        }
+    } 
+    catch(error) {
+        console.error('Fetch error:', error)
+    }
+
+});
 
 // get rows
 //get cols
@@ -82,5 +102,5 @@ document.getElementById('calculate').addEventListener('click', async () => {
 //  get the fields numbers
 // send to backend in a compatible format
 // ******backend-precessing*****
-// backend brings reuslts back
+// backend brings results back
 // __return it to page
