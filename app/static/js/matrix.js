@@ -33,12 +33,10 @@ function returnMatrix() {
         cell.style.padding = '1em'
         cell.innerHTML = `<input type="number" name="" id="num-b" class="matrix-number">`;
         containerB.appendChild(cell)
-    }
+    } // create matrices inputs to user fill and send it to get a operation
 
-    // const operation = document.getElementById('').value;
-
-    calculateButton.disabled = false;
-    calculateButton.style.background = '#000';
+    calculateButton.disabled = false; //enable button again after generate inputs to user fill matrices
+    calculateButton.style.background = '#000'; 
 }
 
 document.getElementById('calculate').addEventListener('click', async () => {
@@ -47,6 +45,7 @@ document.getElementById('calculate').addEventListener('click', async () => {
 
     const matrixA = [];
     const matrixB = [];
+    // create empty lists for reserve the numbers that user will fill in inputs
 
     document.querySelectorAll('#matrix-inputs-a .matrix-number').forEach(input => {
         matrixA.push(Number(input.value));
@@ -54,10 +53,22 @@ document.getElementById('calculate').addEventListener('click', async () => {
 
     document.querySelectorAll('#matrix-inputs-b .matrix-number').forEach(input => {
         matrixB.push(Number(input.value));
-    });
+    }); // putting numbers that user filled in lists
 
     console.log(matrixA)
     console.log(matrixB)
+
+    const operation = document.getElementById('operation').value;
+
+    const payload = {
+        rows: parseInt(rows),
+        cols: parseInt(cols),
+        matrixA,
+        matrixB,
+        operation
+    };
+
+    console.log(payload)
 })
 
 // get rows

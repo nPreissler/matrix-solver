@@ -549,3 +549,10 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+#operation {
+    background: #189342;
+    padding: 0.5em;
+    border-radius: 5px;
+    color: #fff;
+}
