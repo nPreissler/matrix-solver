@@ -536,7 +536,7 @@ body {
     background: linear-gradient(135deg, #ffffff, #d4d4d4);
 }
 
-#matrix-number {
+.matrix-number {
     background: #189342;
     color: #ccc;
     width: 50px;
@@ -547,5 +547,5 @@ body {
 .matrix-result {
     gap: 1.5em;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }

@@ -24,19 +24,41 @@ function returnMatrix() {
     for (let i = 0; i < rows * cols; i++) {
         const cell = document.createElement('div');
         cell.style.padding = '1em'
-        cell.innerHTML = `<input type="number" name="" id="matrix-number num-a">`;
+        cell.innerHTML = `<input type="number" name="" id="num-a" class="matrix-number">`;
         containerA.appendChild(cell)
     }
 
     for (let i = 0; i < rows * cols; i++) {
         const cell = document.createElement('div');
         cell.style.padding = '1em'
-        cell.innerHTML = `<input type="number" name="" id="matrix-number num-b">`;
+        cell.innerHTML = `<input type="number" name="" id="num-b" class="matrix-number">`;
         containerB.appendChild(cell)
     }
+
+    // const operation = document.getElementById('').value;
+
+    calculateButton.disabled = false;
+    calculateButton.style.background = '#000';
 }
 
-returnMatrix()
+document.getElementById('calculate').addEventListener('click', async () => {
+    const rows = document.getElementById('rows').value;
+    const cols = document.getElementById('columns').value;
+
+    const matrixA = [];
+    const matrixB = [];
+
+    document.querySelectorAll('#matrix-inputs-a .matrix-number').forEach(input => {
+        matrixA.push(Number(input.value));
+    });
+
+    document.querySelectorAll('#matrix-inputs-b .matrix-number').forEach(input => {
+        matrixB.push(Number(input.value));
+    });
+
+    console.log(matrixA)
+    console.log(matrixB)
+})
 
 // get rows
 //get cols
