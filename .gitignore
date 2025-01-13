@@ -1,0 +1,59 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+*.env
+
+# Flask default environment folder
+instance/
+
+# macOS specific files
+.DS_Store
+
+# Python virtual environment
+venv/
+env/
+
+# Flask debugging files
+*.log
+
+# VS Code workspace settings
+.vscode/
+
+# Node.js dependencies (if you use npm/yarn for JavaScript)
+node_modules/
+
+# Static and compiled files
+*.pyc
+*.pyo
+*.pyd
+static/build/
+*.map
+
+# IDE and editor specific files
+.idea/
+*.swp
+*.swo
+
+# Pytest cache
+.pytest_cache/
+test-results/
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+*.cov
+
+# Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+*.out
+*.err
