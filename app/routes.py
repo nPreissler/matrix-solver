@@ -18,18 +18,18 @@ def calculate():
     operation = data['operation']
 
     matrix_a_2d = [matrix_a[i * cols:(i + 1) * cols] for i in range(rows)]
-    matrix_b_2d = [matrix_b[i * cols:(i + 1) * cols] for i in range(rows)]
+    matrix_b_2d = [matrix_b[i * cols:(i + 1) * cols] for i in range(rows)] # transform data recived in array in matrix format
 
     try:
         if operation == 'add':
-            result = add_matrices(matrix_a_2d, matrix_b_2d)
+            result = add_matrices(matrix_a_2d, matrix_b_2d) 
         elif operation == 'subtract':
             result = subtract_matrices(matrix_a_2d, matrix_b_2d)
         elif operation == 'multiply':
             result = multiply_matrices(matrix_a_2d, matrix_b_2d)
         else:
             return jsonify({'error': 'Invalid operation'}), 400
-
         return jsonify(result)
+# verify whats the operation selected in application and run the correspondent function for whitch case and return result
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': str(e)}), 500 # if its apresnet errors, send them as result in json format
