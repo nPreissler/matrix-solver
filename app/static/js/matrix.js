@@ -19,7 +19,7 @@ function returnMatrix() {
     for (let i = 0; i < rows * cols; i++) {
         const cell = document.createElement('div');
         cell.style.padding = '1em'
-        cell.textContent = i +1 + 'a';
+        cell.innerHTML = `<input type="number" name="" id="matrix-number">`;
         container.appendChild(cell)
     }
 }
