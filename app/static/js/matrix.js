@@ -36,7 +36,7 @@ function returnMatrix() {
     } // create matrices inputs to user fill and send it to get a operation
 
     calculateButton.disabled = false; //enable button again after generate inputs to user fill matrices
-    calculateButton.style.background = '#000'; 
+    calculateButton.style.background = '#000';
 }
 
 document.getElementById('calculate').addEventListener('click', async () => {
@@ -79,15 +79,49 @@ document.getElementById('calculate').addEventListener('click', async () => {
 
         if (response.ok) {
             const result = await response.json(); //get return of result of operation
-            console.log('Result: ', result) 
-        } 
+            console.log('Result: ', result)
+
+            setTimeout(() => {
+                const resultContainer = document.getElementById('matrix-result');
+                resultContainer.innerHTML = ''; // Limpa o contêiner de resultados anteriores
+
+                // Transforma a matriz 1D em 2D
+                const result2D = [];
+                for (let i = 0; i < payload.rows; i++) {
+                    result2D.push(result.slice(i * payload.cols, (i + 1) * payload.cols));
+                }
+
+                // Define o layout de grade para o resultado
+                resultContainer.style.display = 'grid';
+                resultContainer.style.gridTemplateRows = `repeat(${payload.cols}, auto)`;
+                resultContainer.style.gap = '0.5em';
+
+                // Adiciona os números como células individuais
+                result2D.forEach(row => {
+                    row.forEach(value => {
+                        const cell = document.createElement('div');
+                        cell.classList.add('result-cell')
+                        cell.innerHTML = `<p> ${value} </p>` ;  // Cada célula contém apenas um número
+                        cell.style.border = '1px solid #000';
+                        cell.style.padding = '0.5em';
+                        cell.style.textAlign = 'center';
+                        resultContainer.appendChild(cell);
+                    });
+                });
+
+            }, 1000)
+        }
         else {
             console.log('Error in backend response'); //alert if backend apresnet errors/problems for process the operation
         }
-    } 
-    catch(error) {
+
+
+
+    }
+    catch (error) {
         console.error('Fetch error:', error)
     }
+
 
 });
 
