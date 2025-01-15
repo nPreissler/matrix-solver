@@ -80,14 +80,28 @@ document.getElementById('calculate').addEventListener('click', async () => {
         if (response.ok) {
             const result = await response.json(); //get return of result of operation
             console.log('Result: ', result) 
+
+            setTimeout( () => {
+                const matrixA = document.getElementById('matrix-inputs-a')
+                const matrixB = document.getElementById('matrix-inputs-b')
+         
+                matrixA.innerHTML = ''
+                matrixB.innerHTML = ''
+         
+                matrixA.innerHTML = `${result}`
+             }, 1000)
         } 
         else {
             console.log('Error in backend response'); //alert if backend apresnet errors/problems for process the operation
         }
+        
+        
+        
     } 
     catch(error) {
         console.error('Fetch error:', error)
     }
+
 
 });
 
