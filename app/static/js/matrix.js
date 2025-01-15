@@ -124,17 +124,3 @@ document.getElementById('calculate').addEventListener('click', async () => {
 
 
 });
-
-// get rows
-//get cols
-// -- user click
-// create a perimeter for matrix
-// create one input element for row and column
-// __ return it to page
-// -- user fill fields
-// -- user click (calculate)
-//  get the fields numbers
-// send to backend in a compatible format
-// ******backend-precessing*****
-// backend brings results back
-// __return it to page
