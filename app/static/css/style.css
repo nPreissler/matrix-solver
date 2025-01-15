@@ -548,6 +548,7 @@ body {
     gap: 1.5em;
     display: flex;
     justify-content: space-between;
+    margin: 1em;
 }
 
 #operation {
@@ -555,4 +556,9 @@ body {
     padding: 0.5em;
     border-radius: 5px;
     color: #fff;
+}
+
+.result-cell {
+    width: 20vw;
+    text-align: justify;
 }
