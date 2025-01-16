@@ -86,10 +86,5 @@ O projeto inclui testes automatizados para validar as operações de matrizes.
 
 Os resultados dos testes serão exibidos no terminal.
 
-## Próximos Passos
-- Realizar o deploy em plataformas como Heroku, Render ou Vercel.
-- Adicionar mais operações matemáticas (determinante, transposição, inversa).
-- Melhorar a interface do usuário.
-
 ## Licença
 Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais informações.
