@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
     <link rel="stylesheet" href="../static/css/style.css">
     <!-- <script src="{{ url_for('static', filename='js/matrix.js') }}" defer></script> -->
@@ -36,7 +34,7 @@
                         class="w-full border border-neutral-300 rounded-md p-2 text-neutral-950 focus:outline-none focus:ring-2 focus:ring-primary-500"
                         placeholder="Enter number of columns" />
                 </div>
-                <button type="submit" class="w-full bg-primary-500 text-primary-50 rounded-md py-2"
+                <button type="button" onsubmit="return false" class="w-full bg-primary-500 text-primary-50 rounded-md py-2"
                     onclick="returnMatrix()">
                     Generate Matrix
                 </button>
@@ -50,7 +48,7 @@
         <!-- js will create the input elements for matrix here -->
         <div id="matrix-inputs-b"></div>
     </div>
-    <script src="../static/js/matrix.js"></script>
+    <script src="../static/js/matrix.js" defer></script>
 </body>
 
 </html>
