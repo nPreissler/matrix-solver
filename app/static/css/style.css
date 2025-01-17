@@ -562,3 +562,101 @@ body {
     width: 20vw;
     text-align: justify;
 }
+
+#webcrumbs {
+    font-family: Montserrat !important;
+    font-size: 16px !important;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#webcrumbs .w-\[600px\] {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+}
+
+.matrix-result {
+    gap: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em;
+    flex-wrap: wrap;
+}
+
+#matrix-inputs-a,
+#matrix-inputs-b {
+    flex: 1;
+    min-width: 250px;
+}
+
+.matrix-number {
+    background: #189342;
+    color: #ccc;
+    width: 100%;
+    max-width: 50px;
+    height: 50px;
+    text-align: center !important;
+}
+
+#operation {
+    background: #189342;
+    padding: 0.5em;
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.result-cell {
+    width: 100%;
+    text-align: justify;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #webcrumbs .w-\[600px\] {
+        padding: 10px;
+    }
+
+    .matrix-result {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #matrix-inputs-a,
+    #matrix-inputs-b {
+        width: 100%;
+    }
+
+    #webcrumbs .text-2xl {
+        font-size: 20px;
+    }
+
+    #webcrumbs .p-6 {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #webcrumbs .text-2xl {
+        font-size: 18px;
+    }
+
+    .matrix-number {
+        max-width: 40px;
+        height: 40px;
+    }
+
+    #webcrumbs form input,
+    #webcrumbs form select,
+    #webcrumbs form button {
+        font-size: 14px;
+    }
+}
