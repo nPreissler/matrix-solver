@@ -83,25 +83,25 @@ document.getElementById('calculate').addEventListener('click', async () => {
 
             setTimeout(() => {
                 const resultContainer = document.getElementById('matrix-result');
-                resultContainer.innerHTML = ''; // Limpa o contêiner de resultados anteriores
+                resultContainer.innerHTML = ''; // clear container
 
-                // Transforma a matriz 1D em 2D
+                // transform matrix 1D in matrix  2D
                 const result2D = [];
                 for (let i = 0; i < payload.rows; i++) {
                     result2D.push(result.slice(i * payload.cols, (i + 1) * payload.cols));
                 }
 
-                // Define o layout de grade para o resultado
+                // set a grid layout for result 
                 resultContainer.style.display = 'grid';
                 resultContainer.style.gridTemplateRows = `repeat(${payload.cols}, auto)`;
                 resultContainer.style.gap = '0.5em';
 
-                // Adiciona os números como células individuais
+                // return result
                 result2D.forEach(row => {
                     row.forEach(value => {
                         const cell = document.createElement('div');
                         cell.classList.add('result-cell')
-                        cell.innerHTML = `<p> ${value} </p>` ;  // Cada célula contém apenas um número
+                        cell.innerHTML = `<p> ${value} </p>` ; 
                         cell.style.border = '1px solid #000';
                         cell.style.padding = '0.5em';
                         cell.style.textAlign = 'center';
